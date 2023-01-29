@@ -1,14 +1,15 @@
-#Add your key here
-$key="YOUR_KEY"
+$envVars = Get-Content .\.env
+foreach($envVar in $envVars){
+    $var,$val = $envVar.Split("=")
+    Set-Variable -Name $var -Value $val -Scope Global
+}
 
-#You need to add your resource location if you use a Cognitive Services resource
-$location="YOUR_LOCATION"
 
 #The endpoint is global for the Translator service, DO NOT change it 
 $endpoint="https://api.cognitive.microsofttranslator.com/"
 
 #Text to be translated 
-$text="Hello"
+$text="Hello honey"
 
 # Code to call Text Analytics service to analyze sentiment in text
 $headers = @{}
