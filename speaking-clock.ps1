@@ -1,5 +1,9 @@
-$key="YOUR_KEY"
-$region="YOUR_LOCATION"
+$envVars = Get-Content .\.env
+foreach($envVar in $envVars){
+    $var,$val = $envVar.Split("=")
+    Set-Variable -Name $var -Value $val -Scope Global
+}
+
 
 
 # Code to call Speech to Text API

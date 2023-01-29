@@ -1,6 +1,8 @@
-$key="YOUR_KEY"
-$endpoint="YOUR_ENDPOINT"
-
+$envVars = Get-Content .\.env
+foreach($envVar in $envVars){
+    $var,$val = $envVar.Split("=")
+    Set-Variable -Name $var -Value $val -Scope Global
+}
 
 # Code to call Computer Vision service for image analysis
 $img_file = "store-camera-1.jpg"

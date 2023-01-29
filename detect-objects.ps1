@@ -2,7 +2,6 @@ $predictionUrl="YOUR_PREDICTION_URL"
 $predictionKey = "YOUR_PREDITION_KEY"
 
 
-
 # Code to call Custom Vision service for image detection
 
 $img = "https://raw.githubusercontent.com/MicrosoftLearning/AI-900-AIFundamentals/main/data/vision/produce.jpg"
